@@ -1,0 +1,6 @@
+FROM alpine:3.3
+
+# Install malevolent binary
+COPY malevolent.alpine /usr/local/bin/malevolent
+
+ENTRYPOINT [ "/usr/local/bin/malevolent" ]
