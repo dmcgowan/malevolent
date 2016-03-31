@@ -11,7 +11,6 @@ ENV GOROOT /usr/lib/go
 ENV GOPATH /gopath
 ENV GOBIN /gopath/bin
 ENV PATH $PATH:$GOROOT/bin:$GOPATH/bin
-ENV CGO_ENABLED 0
 
 # Install godep
 RUN go get github.com/tools/godep

@@ -14,7 +14,7 @@ builderimage:
 
 malevolent.alpine: builderimage $(GOFILES)
 	@echo "+ $@"
-	$(DOCKER) run -v $(PREFIX):/gopath/src/github.com/dmcgowan/malevolent $(NAMESPACE)/malevolent-builder sh -c "cd /gopath/src/github.com/dmcgowan/malevolent; godep go build -o malevolent.alpine ."
+	$(DOCKER) run -v $(PREFIX):/gopath/src/github.com/dmcgowan/malevolent $(NAMESPACE)/malevolent-builder sh -c "cd /gopath/src/github.com/dmcgowan/malevolent; godep go build -tags netgo -installsuffix netgo -o malevolent.alpine ."
 
 dockerimage: malevolent.alpine
 	@echo "+ $@"
